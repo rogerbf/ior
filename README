@@ -1,1 +1,24 @@
-ior
+ior (ee-or)
+
+
+G:
+  cast:
+    kristoffer: magnus
+    allan: ulf
+  nürnberg 47:
+    olle: gitarr
+    jan: klaviatur
+
+
+{
+  "G" : {
+    "cast" : {
+      "kristoffer" : "magnus",
+      "allan" : "ulf"
+    }
+    "nürnberg 47" : {
+      "olle" : "gitarr",
+      "jan" : "klaviatur"
+    }
+  }
+}
