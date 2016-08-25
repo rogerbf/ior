@@ -1,24 +1,3 @@
-ior (ee-or)
+ior [ee-or]
 
-
-G:
-  cast:
-    kristoffer: magnus
-    allan: ulf
-  nürnberg 47:
-    olle: gitarr
-    jan: klaviatur
-
-
-{
-  "G" : {
-    "cast" : {
-      "kristoffer" : "magnus",
-      "allan" : "ulf"
-    },
-    "nürnberg 47" : {
-      "olle" : "gitarr",
-      "jan" : "klaviatur"
-    }
-  }
-}
+construct objects with regard to indentation and newline.
