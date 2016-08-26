@@ -1,23 +1,39 @@
 ```
-G:
-  cast:
-    kristoffer: magnus
-    allan: ulf
-  nürnberg 47:
-    olle: gitarr
-    jan: klaviatur
+Filmer:
+  G:
+    Cast:
+      Kristoffer: Magnus
+      Allan: Ulf
+      Musik:
+        Nürnberg 47:
+          Olle: Gitarr
+          Jan: Klaviatur
+  Sopor:
+    Cast:
+      Reporter: Ulf
+      Lena: Victoria
+      Sven: Olof
 ```
 
-``` json
+```json
 {
-  "G" : {
-    "cast" : {
-      "kristoffer" : "magnus",
-      "allan" : "ulf"
+  "Filmer" : {
+    "G" : {
+      "Cast" : {
+        "Kristoffer" : "Magnus",
+        "Allan" : "Ulf",
+        "Nürnberg 47" : {
+          "Olle" : "Gitarr",
+          "Jan" : "Klaviatur"
+        }
+      }
     },
-    "nürnberg 47" : {
-      "olle" : "gitarr",
-      "jan" : "klaviatur"
+    "Sopor" : {
+      "Cast" : {
+        "Reporter" : "Ulf",
+        "Lena" : "Victoria",
+        "Sven" : "Olof"
+      }
     }
   }
 }
