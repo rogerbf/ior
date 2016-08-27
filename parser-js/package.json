@@ -1,0 +1,30 @@
+{
+  "name": "parser-js",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.test.js | faucet",
+    "watch:test": "nodemon -x 'npm test'"
+  },
+  "keywords": [],
+  "author": "rogerbf <roger@bergfalk.nu> (http://bergfalk.nu/)",
+  "license": "MIT",
+  "eslintConfig": {
+    "env": {
+      "node": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 6
+    }
+  },
+  "devDependencies": {
+    "faucet": "0.0.1",
+    "nodemon": "1.10.2",
+    "tape": "4.6.0"
+  },
+  "dependencies": {
+    "indentation-length": "0.0.1",
+    "object-from-string": "0.0.1"
+  }
+}
