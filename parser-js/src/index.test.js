@@ -1,6 +1,5 @@
 const test = require('tape')
 const parse = require('./index.js')
-const fs = require('fs')
 
 test('parse() throws', assert => {
   assert.throws(() => parse())
@@ -18,11 +17,4 @@ test('simple-key', assert => {
   const expected = JSON.stringify({ 'NCC-1701': {} })
   assert.equal(actual, expected)
   assert.end()
-})
-
-test('nested', assert => {
-  const plaintext = fs.readFileSync(__dirname + '/nested.test.text', 'utf-8')
-  const actual = parse(plaintext)
-  const expected = require('./nested.test.json')
-  assert.equal(actual, expected)
 })
