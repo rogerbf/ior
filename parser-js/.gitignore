@@ -1,0 +1,6 @@
+node_modules
+dist
+.DS_Store
+package
+parser-js*.tgz
+npm-debug.log

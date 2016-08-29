@@ -1,0 +1,85 @@
+[{
+    "index": 0,
+    "indentation": 0,
+    "node": {
+        "Filmer": {}
+    },
+    "children": [{
+        "index": 0,
+        "indentation": 2,
+        "node": {
+            "G": {}
+        },
+        "children": [{
+            "index": 0,
+            "indentation": 4,
+            "node": {
+                "Cast": {}
+            },
+            "children": [{
+                "index": 0,
+                "indentation": 6,
+                "node": {
+                    "Kristoffer": "Magnus"
+                }
+            }, {
+                "index": 1,
+                "indentation": 6,
+                "node": {
+                    "Allan": "Ulf"
+                }
+            }, {
+                "index": 2,
+                "indentation": 6,
+                "node": {
+                    "Nürnberg 47": {}
+                },
+                "children": [{
+                    "index": 0,
+                    "indentation": 8,
+                    "node": {
+                        "Olle": "Gitarr"
+                    }
+                }, {
+                    "index": 1,
+                    "indentation": 8,
+                    "node": {
+                        "Jan": "Klaviatur"
+                    }
+                }]
+            }]
+        }]
+    }, {
+        "index": 7,
+        "indentation": 2,
+        "node": {
+            "Sopor": {}
+        },
+        "children": [{
+            "index": 0,
+            "indentation": 4,
+            "node": {
+                "Cast": {}
+            },
+            "children": [{
+                "index": 0,
+                "indentation": 6,
+                "node": {
+                    "Reporter": "Ulf"
+                }
+            }, {
+                "index": 1,
+                "indentation": 6,
+                "node": {
+                    "Lena": "Victoria"
+                }
+            }, {
+                "index": 2,
+                "indentation": 6,
+                "node": {
+                    "Sven": "Olof"
+                }
+            }]
+        }]
+    }]
+}]
