@@ -3,78 +3,66 @@ const objectFromString = require('object-from-string')(':')
 
 const takeFirst = arr => arr.slice(0, 1)[0]
 
-const splitAndClean = str => {
+const splitCreateObjects = str => {
   return (
   str
     .split('\n')
     .reduce((acc, line) => {
       if (line.length > 0) {
-        return acc.concat(
-          {
-            indentation: indentationOf(line),
-            node: objectFromString(line.trim())
-          }
-        )
-      } else {
-        return acc
-      }
+        return acc.concat({
+          indentation: indentationOf(line),
+          node: objectFromString(line.trim())
+        })
+      } else { return acc }
     }, [])
   )
 }
 
-const tree = arr => {
-  return (function createTree (arr) {
-    if (arr.length > 0) {
-      const indentation = takeFirst(arr).indentation
-      return arr.reduce((acc, el, i) => {
+const createTree = arr => {
+  if (arr.length > 0) {
+    const indentation = takeFirst(arr).indentation
+    return (
+    arr
+      .reduce((acc, el, i) => {
         if (el.indentation === indentation) {
-          return acc.concat(Object.assign(
-            {},
-            { index: arr.indexOf(el) },
-            el
-          ))
-        } else {
-          return acc
-        }
+          return acc.concat(Object.assign({}, { index: arr.indexOf(el) }, el))
+        } else { return acc }
       }, [])
-        .map((leaf, i, branches) => {
-          const next = branches[i + 1]
-          if (arr[leaf.index + 1]) {
-            if (leaf.indentation < arr[leaf.index + 1].indentation) {
-              if (next) {
-                const newArr = arr.slice(leaf.index + 1, next.index)
-                leaf.children = createTree(newArr)
-                return leaf
-              } else {
-                const newArr = arr.slice(leaf.index + 1)
-                leaf.children = createTree(newArr)
-                return leaf
-              }
+      .map((branch, i, branches) => {
+        const next = branches[i + 1]
+        if (arr[branch.index + 1]) {
+          if (branch.indentation < arr[branch.index + 1].indentation) {
+            if (next) {
+              branch.children = (
+                createTree(arr.slice(branch.index + 1, next.index))
+              )
+              return branch
+            } else {
+              branch.children = createTree(arr.slice(branch.index + 1))
+              return branch
             }
           }
-          return leaf
-        })
-    }
-  })(arr)
+        }
+        return branch
+      })
+    )
+  }
 }
 
 const flattenTree = arr => {
-  return (function flatten (arr) {
-    return arr.reduce((acc, el) => {
-      if (el.hasOwnProperty('children')) {
-        return Object.assign(acc, { [Object.keys(el.node)[0]] : flatten(el.children) })
-      } else {
-        return Object.assign(acc, el.node)
-      }
-    }, {})
-  })(arr)
+  return arr.reduce((acc, el) => {
+    if (el.hasOwnProperty('children')) {
+      return Object.assign(acc, { [Object.keys(el.node)[0]]: flattenTree(el.children) })
+    } else {
+      return Object.assign(acc, el.node)
+    }
+  }, {})
 }
 
 function parse (str) {
   if (str === undefined) throw new Error('missing argument')
   if (typeof str !== 'string') throw new TypeError('expecting a string')
-
-  return flattenTree(tree(splitAndClean(str)))
+  return flattenTree(createTree(splitCreateObjects(str)))
 }
 
 module.exports = parse

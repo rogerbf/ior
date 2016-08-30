@@ -12,9 +12,9 @@ test("parse('') returns {}", assert => {
 })
 
 test('simple-key', assert => {
+  assert.plan(1)
   const plaintext = 'NCC-1701:'
   const actual = JSON.stringify(parse(plaintext))
   const expected = JSON.stringify({ 'NCC-1701': {} })
   assert.equal(actual, expected)
-  assert.end()
 })
