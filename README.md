@@ -1,4 +1,4 @@
-![ior](https://github.com/rogerbf/ior/blob/master/ior-logo.png)
+<img src="https://github.com/rogerbf/ior/blob/master/ior-logo.png" width="200px" height="200px">
 
 # ior [ jo ]
 
