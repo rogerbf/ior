@@ -1,8 +1,6 @@
 const indentationOf = require('indentation-length')
 const objectFromString = require('object-from-string')(':')
 
-const takeFirst = arr => arr.slice(0, 1)[0]
-
 const splitCreateObjects = str => {
   return (
   str
@@ -20,7 +18,7 @@ const splitCreateObjects = str => {
 
 const createTree = arr => {
   if (arr.length > 0) {
-    const indentation = takeFirst(arr).indentation
+    const indentation = arr.slice(0, 1)[0].indentation
     return (
     arr
       .reduce((acc, el, i) => {
