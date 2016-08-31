@@ -4,11 +4,11 @@
   "description": "",
   "main": "./dist/index.js",
   "scripts": {
-    "test": "babel-node ./src/index.test.js | faucet",
-    "prebuild": "npm test && rimraf dist",
+    "prebuild": "rimraf dist",
     "build": "babel --ignore *.test.* --out-dir dist src",
     "prepublish": "npm run build",
-    "watch:test": "nodemon -x 'npm test'",
+    "test:simple": "babel-node ./src/simple.test.js",
+    "watch:test:simple": "nodemon -x 'npm run test:simple'",
     "test:nested": "babel-node ./src/nested.test.js",
     "watch:test:nested": "nodemon -x 'npm run test:nested'"
   },
@@ -18,10 +18,8 @@
   "devDependencies": {
     "babel-cli": "6.14.0",
     "babel-preset-es2015": "6.14.0",
-    "faucet": "0.0.1",
     "nodemon": "1.10.2",
-    "rimraf": "2.5.4",
-    "tape": "4.6.0"
+    "rimraf": "2.5.4"
   },
   "files": [
     "dist",
