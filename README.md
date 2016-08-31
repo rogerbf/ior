@@ -1,6 +1,6 @@
 ![ior](https://github.com/rogerbf/ior/blob/master/ior-logo.png)
 
-# ior [jo]
+# ior [ jo ]
 
 Use indentation to describe relationships between objects. i.e:
  ```
